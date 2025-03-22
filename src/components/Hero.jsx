@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
+import bgGif from "./assets/bg.gif";
 
 const Boy3DModel = () => {
   const { scene, animations } = useGLTF("/boy3.glb");
@@ -22,14 +23,14 @@ const Boy3DModel = () => {
     if (mixer.current) mixer.current.update(delta);
   });
 
-  {/* Background */}
+   {/* Background GIF */}
       <div
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="absolute inset-0 bg-cover bg-center z-[-1]"
         style={{
-          backgroundImage: `url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')`,
+          backgroundImage: `url(${bgGif})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 3,
+          opacity: 1, 
         }}
       ></div>
 
