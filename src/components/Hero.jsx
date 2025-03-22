@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
-import bgGif from "./assets/bg.gif"; // ✅ Correctly Import the GIF
+
 
 const Boy3DModel = () => {
   const { scene, animations } = useGLTF("/boy3.glb");
@@ -42,15 +42,16 @@ const Hero = () => {
       className="relative h-screen bg-gray-900 text-white flex items-center justify-center overflow-hidden px-4"
     >
       {/* ✅ Background GIF */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-[-1]"
-        style={{
-          backgroundImage: `url(${bgGif})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 1,
-        }}
-      ></div>
+     <div
+  className="absolute inset-0 bg-cover bg-center z-[-1]"
+  style={{
+    backgroundImage: `url("/bg.gif")`, // No import needed if in public/
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    opacity: 1,
+  }}
+></div>
+
 
       {/* ✅ 3D Model Canvas */}
       <Canvas
