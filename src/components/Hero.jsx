@@ -36,7 +36,16 @@ const Boy3DModel = () => {
     />
   );
 };
-
+//background...
+<div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: `url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 3,
+        }}
+      ></div>
 const Hero = () => {
   return (
     <section
@@ -76,10 +85,10 @@ const Hero = () => {
             ease: "easeInOut",
           }}
         >
-          Hi, I'm Vipul
+          ℍ𝕚, 𝕀'𝕞 𝕍𝕚𝕡𝕦𝕝✌️
         </motion.h1>
         <p className="text-lg md:text-xl mb-6">
-          A passionate software developer, creating impactful solutions.
+          A passionate <span className="text-orange-400 font-semibold">Software Developer</span>, creating impactful solutions.
         </p>
         <div className="space-y-4 sm:space-y-0 sm:space-x-4">
           <a
