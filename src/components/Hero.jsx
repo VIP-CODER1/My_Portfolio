@@ -22,6 +22,17 @@ const Boy3DModel = () => {
     if (mixer.current) mixer.current.update(delta);
   });
 
+  {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: `url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 3,
+        }}
+      ></div>
+
   // Jump and Dance actions
   const toggleDance = () => {
     setIsDancing(!isDancing);
@@ -36,16 +47,7 @@ const Boy3DModel = () => {
     />
   );
 };
-//background...
-<div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{
-          backgroundImage: `url('https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 3,
-        }}
-      ></div>
+
 const Hero = () => {
   return (
     <section
