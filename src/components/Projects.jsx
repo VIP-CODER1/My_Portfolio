@@ -1,6 +1,12 @@
 import React from "react";
 
 const projects = [
+ 
+    {
+    name: "VIP-GYM-CLUB",
+    description: "All-in-one solution for managing gym operations efficiently and effectively,Whether you're a gym owner or a fitness enthusiast, our system is designed to cater to your needs.",
+    link: "https://github.com/VIP-CODER1/VIP-GYM-CLUB",
+  },
   {
     name: "SmartImage Compressor",
     description: "Compress images of various formats (JPEG, PNG). Adjustable compression ratio for customization.",
