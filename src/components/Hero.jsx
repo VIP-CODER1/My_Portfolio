@@ -1,16 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react"; 
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
-import bgGif from "./assets/bg.gif";
+import bgGif from "./assets/bg.gif"; // ✅ Correctly Import the GIF
 
 const Boy3DModel = () => {
   const { scene, animations } = useGLTF("/boy3.glb");
   const mixer = useRef(null);
   const [isDancing, setIsDancing] = useState(false);
 
-  // Initialize animation mixer for animation control
   useEffect(() => {
     if (animations) {
       mixer.current = new AnimationMixer(scene);
@@ -18,23 +17,10 @@ const Boy3DModel = () => {
     }
   }, [animations, scene]);
 
-  // Update the animation mixer on each frame
   useFrame((state, delta) => {
     if (mixer.current) mixer.current.update(delta);
   });
 
-   {/* Background GIF */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-[-1]"
-        style={{
-          backgroundImage: `url(${bgGif})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 1, 
-        }}
-      ></div>
-
-  // Jump and Dance actions
   const toggleDance = () => {
     setIsDancing(!isDancing);
   };
@@ -55,32 +41,38 @@ const Hero = () => {
       id="hero"
       className="relative h-screen bg-gray-900 text-white flex items-center justify-center overflow-hidden px-4"
     >
-      {/* 3D Background */}
+      {/* ✅ Background GIF */}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-[-1]"
+        style={{
+          backgroundImage: `url(${bgGif})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 1,
+        }}
+      ></div>
+
+      {/* ✅ 3D Model Canvas */}
       <Canvas
         className="absolute top-0 left-0 w-full h-full"
         camera={{ position: [0, 0, 5], fov: 50 }}
       >
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 10]} intensity={1} />
-
-        {/* Boy Model with jumping and dancing */}
         <Boy3DModel />
-
-        {/* OrbitControls */}
         <OrbitControls enableZoom={false} />
       </Canvas>
 
-      {/* Foreground Content */}
+      {/* ✅ Foreground Content */}
       <motion.div
         className="text-center relative z-10 max-w-lg mx-auto transform -translate-x-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* Moving Text */}
         <motion.h1
-          className="text-4xl md:text-5xl font-bold mb-5 text-orange-500 "
-          animate={{ x: [0, 20, -20, 0] }} // Moves back and forth
+          className="text-4xl md:text-5xl font-bold mb-5 text-orange-500"
+          animate={{ x: [0, 20, -20, 0] }}
           transition={{
             duration: 1,
             repeat: Infinity,
@@ -106,9 +98,6 @@ const Hero = () => {
           >
             About Me
           </a>
-         
-          
-
         </div>
       </motion.div>
     </section>
