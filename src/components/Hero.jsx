@@ -37,13 +37,7 @@ const Boy3DModel = () => {
 
 const Hero = () => {
   return (
-    <section
-      id="hero"
-      className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4"
-      style={{
-        background: "linear-gradient(to bottom, aqua,blue)", 
-      }}
-    >
+  
       {/* ✅ 3D Model Canvas */}
       <Canvas
         className="absolute top-0 left-0 w-full h-full"
