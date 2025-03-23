@@ -41,7 +41,7 @@ const Hero = () => {
       id="hero"
       className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4"
       style={{
-        background: "linear-gradient(to bottom, blue, white, orange)", 
+        background: "linear-gradient(to bottom, aqua,blue)", 
       }}
     >
       {/* ✅ 3D Model Canvas */}
