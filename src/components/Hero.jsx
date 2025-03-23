@@ -39,7 +39,10 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen bg-gray-900 text-white flex items-center justify-center overflow-hidden px-4"
+      className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4"
+      style={{
+        background: "linear-gradient(blue, white, orange)", // ✅ Linear Gradient Applied
+      }}
     >
       {/* ✅ Background GIF */}
       <div
@@ -48,7 +51,7 @@ const Hero = () => {
           backgroundImage: `url(${bgGif})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 1,
+          opacity: 0.5, // ✅ Adjusted opacity so gradient is visible
         }}
       ></div>
 
