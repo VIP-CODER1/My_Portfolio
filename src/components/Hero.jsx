@@ -37,12 +37,21 @@ const Boy3DModel = () => {
 };
 
 const Hero = () => {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [showConfetti, setShowConfetti] = useState(false); // ✅ Added missing state
+
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    setCursorPos({ x: clientX - centerX, y: clientY - centerY });
+  };
+
   return (
-    // <section id="projects" className="py-16 bg-gray-900 text-gray-100">
-     <section
+    <section
       id="hero"
       className="relative h-screen flex items-center justify-center text-white overflow-hidden px-4"
-      onMouseMove={handleMouseMove}
+      onMouseMove={handleMouseMove} // ✅ Now it exists
       onMouseEnter={() => setShowConfetti(true)}
       onMouseLeave={() => setShowConfetti(false)}
       style={{
