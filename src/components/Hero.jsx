@@ -41,7 +41,7 @@ const Hero = () => {
       id="hero"
       className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4"
       style={{
-        background: "linear-gradient(blue, white, orange)", // ✅ Linear Gradient Applied
+        background: "linear-gradient(blue, white, orange)", 
       }}
     >
       {/* ✅ Background GIF */}
@@ -51,7 +51,7 @@ const Hero = () => {
           backgroundImage: `url(${bgGif})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.5, // ✅ Adjusted opacity so gradient is visible
+          opacity: 1, 
         }}
       ></div>
 
