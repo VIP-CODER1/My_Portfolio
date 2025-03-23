@@ -45,7 +45,7 @@ const Hero = () => {
       }}
     >
       {/* ✅ Background GIF */}
-      <div
+{/*       <div
         className="absolute inset-0 bg-cover bg-center z-[-1]"
         style={{
           backgroundImage: `url(${bgGif})`,
@@ -53,7 +53,7 @@ const Hero = () => {
           backgroundPosition: "center",
           opacity: 1, 
         }}
-      ></div>
+      ></div> */}
 
       {/* ✅ 3D Model Canvas */}
       <Canvas
