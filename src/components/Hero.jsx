@@ -41,20 +41,9 @@ const Hero = () => {
       id="hero"
       className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4"
       style={{
-        background: "linear-gradient(blue, white, orange)", 
+        background: "linear-gradient(to bottom, blue, white, orange)", 
       }}
     >
-      {/* ✅ Background GIF */}
-{/*       <div
-        className="absolute inset-0 bg-cover bg-center z-[-1]"
-        style={{
-          backgroundImage: `url(${bgGif})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 1, 
-        }}
-      ></div> */}
-
       {/* ✅ 3D Model Canvas */}
       <Canvas
         className="absolute top-0 left-0 w-full h-full"
