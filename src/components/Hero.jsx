@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"; 
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
@@ -10,38 +10,36 @@ const Boy3DModel = () => {
   const [isDancing, setIsDancing] = useState(false);
 
   useEffect(() => {
-    if (animations) {
+    if (animations.length) {
       mixer.current = new AnimationMixer(scene);
       animations.forEach((clip) => mixer.current.clipAction(clip).play());
     }
   }, [animations, scene]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (mixer.current) mixer.current.update(delta);
   });
 
   const toggleDance = () => {
     setIsDancing(!isDancing);
+    if (mixer.current) {
+      animations.forEach((clip) => {
+        const action = mixer.current.clipAction(clip);
+        isDancing ? action.stop() : action.play();
+      });
+    }
   };
 
   return (
-    <primitive
-      object={scene}
-      scale={0.05}
-      position={[0, -1.5, 1]}
-      onClick={toggleDance}
-    />
+    <primitive object={scene} scale={0.05} position={[0, -1.5, 1]} onClick={toggleDance} />
   );
 };
 
 const Hero = () => {
   return (
-  
+    <section id="hero" className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4 bg-black">
       {/* ✅ 3D Model Canvas */}
-      <Canvas
-        className="absolute top-0 left-0 w-full h-full"
-        camera={{ position: [0, 0, 5], fov: 50 }}
-      >
+      <Canvas className="absolute top-0 left-0 w-full h-full" camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 10]} intensity={1} />
         <Boy3DModel />
@@ -58,12 +56,7 @@ const Hero = () => {
         <motion.h1
           className="text-4xl md:text-5xl font-bold mb-5 text-orange-500"
           animate={{ x: [0, 20, -20, 0] }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
         >
           ℍ𝕚, 𝕀'𝕞 𝕍𝕚𝕡𝕦𝕝✌️
         </motion.h1>
@@ -71,16 +64,10 @@ const Hero = () => {
           A passionate <span className="text-orange-400 font-semibold">Software Developer</span>, creating impactful solutions.
         </p>
         <div className="space-y-4 sm:space-y-0 sm:space-x-4">
-          <a
-            href="#projects"
-            className="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-700 transition block sm:inline-block"
-          >
+          <a href="#projects" className="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-700 transition block sm:inline-block">
             View My Work
           </a>
-          <a
-            href="#about"
-            className="bg-gray-500 px-6 py-3 rounded-lg hover:bg-gray-600 transition block sm:inline-block"
-          >
+          <a href="#about" className="bg-gray-500 px-6 py-3 rounded-lg hover:bg-gray-600 transition block sm:inline-block">
             About Me
           </a>
         </div>
