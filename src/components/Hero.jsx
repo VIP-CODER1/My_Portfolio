@@ -37,7 +37,7 @@ const Boy3DModel = () => {
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative h-screen text-white flex items-center justify-center overflow-hidden px-4 bg-black">
+   <section id="about" className="py-16 bg-gray-900 text-white">
       {/* ✅ 3D Model Canvas */}
       <Canvas className="absolute top-0 left-0 w-full h-full" camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={0.5} />
