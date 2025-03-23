@@ -4,7 +4,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { AnimationMixer } from "three";
 
-
 const Boy3DModel = () => {
   const { scene, animations } = useGLTF("/boy3.glb");
   const mixer = useRef(null);
