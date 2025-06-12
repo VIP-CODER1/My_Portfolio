@@ -34,11 +34,7 @@ const projects = [
     description: "An exam scheduling system with invigilator duty assignment.",
     link: "https://github.com/VIP-CODER1/exam_time-management",
   },
-  {
-    name: "API-Chaining-Dashboard",
-    description: "An exam scheduling system with invigilator duty assignment.",
-    link: "https://vip-coder1.github.io/API-Chaining-Dashboard/",
-  },
+  
 ];
 
 const Projects = () => {
