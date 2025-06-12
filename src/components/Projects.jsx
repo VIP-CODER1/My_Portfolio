@@ -1,8 +1,20 @@
 import React from "react";
 
 const projects = [
- 
-    {
+
+  {
+    name: "GharBazaar",
+    description: "GharBazzar is a MERN stack real estate platform that provides a modern and mobile-friendly experience for buying, selling, and listing properties online.",
+    link: "https://gharbazaar-nfji.onrender.com/",
+  },
+
+ {
+    name: "TaskTracker with OpenAI ",
+    description: "A modern Task Tracker with OpenAI application built with the MERN stack (MongoDB, Express, React, Node.js) and enhanced with OpenAI integration. TaskTracker helps teams organize, assign, and track tasks efficiently with a beautiful and intuitive interface.",
+    link: "https://github.com/VIP-CODER1/Task-Tracker-with-OpenAI",
+  },
+   
+ {
     name: "VIP-GYM-CLUB",
     description: "All-in-one solution for managing gym operations efficiently and effectively,Whether you're a gym owner or a fitness enthusiast, our system is designed to cater to your needs.",
     link: "https://github.com/VIP-CODER1/VIP-GYM-CLUB",
@@ -16,11 +28,6 @@ const projects = [
     name: "Coding Platform like GeeksforGeeks",
     description: "Developed a coding platform similar to GeeksforGeeks. Implemented features for problem-solving, contests, and tutorials.",
     link: "https://vip-coder1.github.io/CodeCraft-Academy/",
-  },
-  {
-    name: "Dynamic-weather_app ",
-    description: "A tool to see the current weather details effectively.",
-    link: "https://vip-coder1.github.io/Dynamic-weather_app/",
   },
   {
     name: "Dynamic Exam Scheduler",
