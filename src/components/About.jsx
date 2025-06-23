@@ -1,5 +1,5 @@
 import React from "react";
-import myImage from "../assets/vipul img.png"; // Ensure the path and filename are correct
+import myImage from "../assets/vipul imgn.png"; // Ensure the path and filename are correct
 
 const About = () => {
   return (
