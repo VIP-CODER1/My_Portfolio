@@ -180,7 +180,6 @@ const About = () => {
                  I specialize in developing <span className="text-orange-400 font-semibold">efficient and scalable solutions</span> with a strong foundation in 
 <span className="text-blue-400 font-semibold"> C++</span>, 
 <span className="text-green-400 font-semibold"> Data Structures & Algorithms</span>, and modern technologies like 
-<span className="text-cyan-400 font-semibold"> React.js</span>, 
 <span className="text-purple-400 font-semibold"> MERN Stack</span>, and 
 <span className="text-pink-400 font-semibold"> Next.js</span>.
 
