@@ -177,9 +177,13 @@ const About = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.0 }}
                 >
-                  I specialize in developing <span className="text-orange-400 font-semibold">efficient and scalable solutions</span> with a strong foundation in 
-                  <span className="text-blue-400 font-semibold"> C++</span> and modern technologies like 
-                  <span className="text-cyan-400 font-semibold"> React.js</span>.
+                 I specialize in developing <span className="text-orange-400 font-semibold">efficient and scalable solutions</span> with a strong foundation in 
+<span className="text-blue-400 font-semibold"> C++</span>, 
+<span className="text-green-400 font-semibold"> Data Structures & Algorithms</span>, and modern technologies like 
+<span className="text-cyan-400 font-semibold"> React.js</span>, 
+<span className="text-purple-400 font-semibold"> MERN Stack</span>, and 
+<span className="text-pink-400 font-semibold"> Next.js</span>.
+
                 </motion.p>
                 
                 <motion.p
@@ -187,10 +191,12 @@ const About = () => {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
-                  Driven by enthusiasm to learn, adapt, and grow in dynamic environments. My core strengths lie in 
-                  <span className="text-green-400 font-semibold"> problem-solving</span>, 
-                  <span className="text-purple-400 font-semibold"> attention to detail</span>, and delivering 
-                  <span className="text-pink-400 font-semibold"> user-centric solutions</span>.
+                 Driven by enthusiasm to learn, adapt, and grow in dynamic environments. My core strengths lie in 
+<span className="text-green-400 font-semibold"> problem-solving</span>, 
+<span className="text-purple-400 font-semibold"> Data Structures & Algorithms</span>, 
+<span className="text-cyan-400 font-semibold"> full-stack development</span>, and delivering 
+<span className="text-pink-400 font-semibold"> user-centric solutions</span>.
+
                 </motion.p>
               </div>
             </motion.div>
