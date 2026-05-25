@@ -123,19 +123,6 @@ const Footer = () => {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <a 
-                  href="tel:+91 6204252002"
-                  className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
-                >
-                  +91 6204252002
-                </a>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 viewport={{ once: true }}
                 className="text-gray-400"

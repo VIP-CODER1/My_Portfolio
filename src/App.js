@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 
 // Lazy load components for better performance
 const Hero = lazy(() => import("./components/Hero"));
+const Experience = lazy(() => import("./components/Experience"));
+const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
@@ -32,6 +34,12 @@ const App = () => {
         <Navbar />
         <Suspense fallback={<LoadingSpinner />}>
           <Hero />
+        </Suspense>
+        <Suspense fallback={<div className="h-screen bg-gray-900 dark:bg-gray-900 light:bg-gray-100"></div>}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<div className="h-screen bg-gray-900 dark:bg-gray-900 light:bg-gray-100"></div>}>
+          <Skills />
         </Suspense>
         <Suspense fallback={<div className="h-screen bg-gray-900 dark:bg-gray-900 light:bg-gray-100"></div>}>
           <Projects />

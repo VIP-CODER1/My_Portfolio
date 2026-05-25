@@ -39,7 +39,12 @@ export const ThemeProvider = ({ children }) => {
   }, [isDark]);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    // View Transitions API: gracefully degrades when unsupported.
+    if (typeof document !== 'undefined' && document.startViewTransition) {
+      document.startViewTransition(() => setIsDark((prev) => !prev));
+    } else {
+      setIsDark((prev) => !prev);
+    }
   };
 
   const value = {

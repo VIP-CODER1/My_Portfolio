@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, Float, Sparkles, MeshDistortMaterial } from "@react-three/drei";
+import { OrbitControls, Sphere, Float, Sparkles, MeshDistortMaterial, ContactShadows, Environment } from "@react-three/drei";
 import * as THREE from "three";
 import { Particles, initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -80,7 +80,7 @@ const ComplexShape = () => {
   });
 
   return (
-    <Float speed={1} rotationIntensity={0.8} floatIntensity={1.2}>
+    <Float speed={1.4} rotationIntensity={0.4} floatIntensity={0.6}>
       <group ref={meshRef}>
         {/* Main Complex Shape */}
         <mesh position={[0, 0, 0]}>
@@ -145,7 +145,17 @@ const Scene3D = () => {
       <pointLight position={[0, 0, 5]} color="#f9ca24" intensity={0.6} />
       
       <ComplexShape />
-      
+
+      <ContactShadows
+        position={[0, -2.2, 0]}
+        opacity={0.5}
+        scale={10}
+        blur={2.5}
+        far={4}
+        color="#ff6b35"
+      />
+      <Environment preset="city" />
+
       <Sparkles count={100} scale={20} size={4} speed={0.8} color="#ff6b35" />
       <Sparkles count={60} scale={12} size={2} speed={0.4} color="#4ecdc4" />
       <Sparkles count={40} scale={8} size={1} speed={0.2} color="#45b7d1" />
@@ -271,34 +281,42 @@ const Hero = () => {
               </motion.div>
 
               {/* Name */}
-        <motion.h1
+              <motion.h1
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.9 }}
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: { transition: { delayChildren: 0.9, staggerChildren: 0.045 } },
+                }}
               >
-                <motion.span 
-                  className="bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent relative"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] 
-                  }}
-                  transition={{ 
-                    duration: 5, 
-                    repeat: Infinity, 
-                    ease: "linear" 
-                  }}
-      style={{
-                    backgroundSize: "200% 200%"
-                  }}
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent"
+                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                  style={{ backgroundSize: "200% 200%" }}
+                  aria-label="Vipul Kumar"
                 >
-                  Vipul Kumar
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent opacity-50 blur-sm"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
+                  {"Vipul Kumar".split("").map((char, i) => (
+                    <motion.span
+                      key={i}
+                      className="inline-block"
+                      variants={{
+                        hidden: { y: "100%", opacity: 0, rotate: -8 },
+                        visible: {
+                          y: 0,
+                          opacity: 1,
+                          rotate: 0,
+                          transition: { type: "spring", damping: 14, stiffness: 200 },
+                        },
+                      }}
+                      aria-hidden="true"
+                    >
+                      {char === " " ? " " : char}
+                    </motion.span>
+                  ))}
                 </motion.span>
-        </motion.h1>
+              </motion.h1>
 
               {/* Tagline */}
               <motion.div
@@ -329,14 +347,14 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 1.3 }}
               >
                 <motion.button
-                  onClick={() => scrollToSection("projects")}
+                  onClick={() => scrollToSection("experience")}
                   className="group relative px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full text-black font-bold text-sm sm:text-base overflow-hidden shadow-2xl"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <Code className="w-4 h-4" />
-            View My Work
+            Experience &amp; Education
                   </span>
                   <motion.div 
                     className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

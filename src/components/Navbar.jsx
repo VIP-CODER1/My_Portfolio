@@ -102,8 +102,9 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {[
               { name: "Home", id: "hero" },
-              { name: "About", id: "about" },
+              { name: "Experience", id: "experience" },
               { name: "Projects", id: "projects" },
+              { name: "About", id: "about" },
               { name: "Contact", id: "contact" }
             ].map((item, index) => (
               <motion.button

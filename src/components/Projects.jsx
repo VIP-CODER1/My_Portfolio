@@ -8,6 +8,16 @@ import VGImage from "../assets/GYM.png";
 
 const projects = [
   {
+    name: "FlowScrape",
+    description: "AI workflow automation and orchestration platform supporting visual workflow creation, multi-phase execution, scheduling, and real-time run monitoring for browser-based scraping tasks.",
+    longDescription: "Engineered a scalable full-stack AI workflow automation platform supporting visual workflow creation, multi-phase execution, scheduling, and real-time run monitoring for browser-based scraping tasks. Implemented production-grade backend systems including Clerk authentication, AES-encrypted credential storage, Stripe-based credit billing, webhook handling, and secure server-side actions. Built execution analytics and observability modules with per-phase logs, real-time status dashboards, and credit usage tracking; extended platform with MCP Server features including server creation, chain builder, and AI-driven test interfaces.",
+    link: "https://flow-scrape-ai.vercel.app",
+    github: "https://github.com/VIP-CODER1/FlowScrape-AI",
+    tech: ["TypeScript", "Next.js", "React.js", "Prisma", "Supabase (PostgreSQL)", "Clerk", "Stripe", "Puppeteer", "Tailwind CSS", "Shadcn"],
+    image: "/api/placeholder/600/400",
+    featured: true
+  },
+  {
     name: "GharBazaar",
     description: "A comprehensive MERN stack real estate platform providing modern and mobile-friendly experience for buying, selling, and listing properties online with advanced search filters and user management.",
     longDescription: "GharBazaar is a full-featured real estate platform built with MongoDB, Express.js, React, and Node.js. It includes features like property listings, advanced search filters, user authentication, admin dashboard, and responsive design. The platform supports image uploads, property categorization, and real-time notifications.",
@@ -46,27 +56,27 @@ const projects = [
     tech: ["HTML5", "JavaScript", "Canvas API", "CSS3"],
     image: "/api/placeholder/600/400",
     featured: false
-  },
-  {
-    name: "CodeCraft Academy",
-    description: "Interactive coding platform similar to GeeksforGeeks with problem-solving challenges, contests, and comprehensive tutorials for programming enthusiasts.",
-    longDescription: "A comprehensive coding platform featuring algorithmic problems, coding contests, tutorial system, and progress tracking. Includes code editor with syntax highlighting and real-time execution.",
-    link: "https://vip-coder1.github.io/CodeCraft-Academy/",
-    github: "https://github.com/VIP-CODER1/CodeCraft-Academy",
-    tech: ["React", "JavaScript", "CSS3", "Local Storage"],
-    image: "/api/placeholder/600/400",
-    featured: false
-  },
-  {
-    name: "Dynamic Exam Scheduler",
-    description: "Intelligent exam scheduling system with automated invigilator assignment, conflict detection, and resource optimization for educational institutions.",
-    longDescription: "An advanced scheduling system that automatically assigns invigilators, detects scheduling conflicts, and optimizes resource allocation. Features include room management, time slot optimization, and reporting capabilities.",
-    link: "https://github.com/VIP-CODER1/exam_time-management",
-    github: "https://github.com/VIP-CODER1/exam_time-management",
-    tech: ["Python", "Django", "SQLite", "Algorithm Design"],
-    image: "/api/placeholder/600/400",
-    featured: false
   }
+  // {
+  //   name: "CodeCraft Academy",
+  //   description: "Interactive coding platform similar to GeeksforGeeks with problem-solving challenges, contests, and comprehensive tutorials for programming enthusiasts.",
+  //   longDescription: "A comprehensive coding platform featuring algorithmic problems, coding contests, tutorial system, and progress tracking. Includes code editor with syntax highlighting and real-time execution.",
+  //   link: "https://vip-coder1.github.io/CodeCraft-Academy/",
+  //   github: "https://github.com/VIP-CODER1/CodeCraft-Academy",
+  //   tech: ["React", "JavaScript", "CSS3", "Local Storage"],
+  //   image: "/api/placeholder/600/400",
+  //   featured: false
+  // },
+  // {
+  //   name: "Dynamic Exam Scheduler",
+  //   description: "Intelligent exam scheduling system with automated invigilator assignment, conflict detection, and resource optimization for educational institutions.",
+  //   longDescription: "An advanced scheduling system that automatically assigns invigilators, detects scheduling conflicts, and optimizes resource allocation. Features include room management, time slot optimization, and reporting capabilities.",
+  //   link: "https://github.com/VIP-CODER1/exam_time-management",
+  //   github: "https://github.com/VIP-CODER1/exam_time-management",
+  //   tech: ["Python", "Django", "SQLite", "Algorithm Design"],
+  //   image: "/api/placeholder/600/400",
+  //   featured: false
+  // }
 ];
 
 // 3D Tilt Card Component

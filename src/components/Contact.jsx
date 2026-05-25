@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import emailjs from '@emailjs/browser';
 
@@ -34,13 +34,6 @@ const contactInfo = [
     value: "vipulmth1@gmail.com",
     link: "mailto:vipulmth1@gmail.com",
     color: "#ff6b35"
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+91 6204252002",
-    link: "tel:+91 6204252002",
-    color: "#4ecdc4"
   },
   {
     icon: MapPin,
