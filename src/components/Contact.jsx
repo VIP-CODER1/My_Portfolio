@@ -4,7 +4,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
 import { Mail, MapPin, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
-import emailjs from '@emailjs/browser';
 
 // 3D Floating Contact Icons
 const FloatingIcon = ({ position, children }) => {

@@ -1,70 +1,11 @@
 import React, { useEffect, useRef, useState, useMemo, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, Float, Sparkles, MeshDistortMaterial, ContactShadows, Environment } from "@react-three/drei";
-import * as THREE from "three";
+import { OrbitControls, Float, Sparkles, ContactShadows, Environment } from "@react-three/drei";
 import { Particles, initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { Download, Github, Linkedin, Mail, Code, Database, Smartphone, Cpu } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Code } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
-
-// Floating geometric shapes with better animations
-const FloatingShape = ({ position, color, geometry }) => {
-  const meshRef = useRef();
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.4;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.8 + position[0]) * 0.3;
-      meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * 0.2) * 0.2;
-    }
-  });
-
-  return (
-    <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.5}>
-      <mesh ref={meshRef} position={position}>
-        <primitive object={geometry} />
-        <meshStandardMaterial 
-          color={color} 
-          emissive={color} 
-          emissiveIntensity={0.3}
-          transparent
-          opacity={0.8}
-        />
-      </mesh>
-    </Float>
-  );
-};
-
-// Tech Icons floating around
-const TechIcon = ({ position, Icon, color }) => {
-  const meshRef = useRef();
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.4) * 0.5;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.6 + position[0]) * 0.4;
-    }
-  });
-
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={1.5}>
-      <group ref={meshRef} position={position}>
-        <mesh>
-          <sphereGeometry args={[0.8, 32, 32]} />
-          <meshStandardMaterial 
-            color={color} 
-            emissive={color} 
-            emissiveIntensity={0.2}
-            transparent
-            opacity={0.6}
-          />
-        </mesh>
-      </group>
-    </Float>
-  );
-};
 
 // Complex 4D-like Shape Component
 const ComplexShape = () => {
@@ -224,18 +165,7 @@ const ParticleBackground = () => {
 };
 
 const Hero = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const { isDark } = useTheme();
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    setMousePos({ 
-      x: (clientX - centerX) / centerX, 
-      y: (clientY - centerY) / centerY 
-    });
-  };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
